@@ -9,7 +9,7 @@ import Foundation
 
 struct WeatherManager {
     
-    var cityName = "Cupertino"
+    var cityName = ""
     
     let weatherURL =  "https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=\(Constants.openWeatherAPIKey)"
     
@@ -64,11 +64,34 @@ struct WeatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            print(decodedData.weather[0].description)
+            let condition = getConditionName(weatherID: decodedData.weather[0].id)
             
         } catch {
             print("error decoding JSON")
             print(error.localizedDescription)
+        }
+    }
+    
+    func getConditionName(weatherID: Int) -> String {
+        switch weatherID {
+        case 200...232:
+            return "cloud.bolt.fill"
+        case 300...321:
+            return "cloud.drizzle.fill"
+        case 500...531:
+            return "cloud.heavyrain.fill"
+        case 600...622:
+            return "cloud.snow.fill"
+        case 701...780:
+            return "cloud.fog.fill"
+        case 781:
+            return "tornado"
+        case 800:
+            return "sun.max.fill"
+        case 801...804:
+            return "cloud.fill"
+        default:
+            return "?"
         }
     }
 }
