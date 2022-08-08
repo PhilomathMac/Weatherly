@@ -7,9 +7,12 @@ Simple app that grabs phone location and displays current temperature and weathe
 
 ## Skills Practiced
 
+* UI Layout
+* Autolayout and constraints
 * Dark Mode
 * Protocol/Delegate Pattern
 * Closures/Completion Handlers
+* Use APIs
 * HTTP Requests
 * JSON Encoding/Decoding
 * Grand Central Dispatch
