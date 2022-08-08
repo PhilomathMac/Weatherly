@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mFE-Jt-WgX" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightBackgroundVector" translatesAutoresizingMaskIntoConstraints="NO" id="mFE-Jt-WgX" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kUy-hb-lnI">
@@ -32,8 +33,11 @@
                                                     <constraint firstAttribute="height" constant="40" id="W72-H8-gNI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" name="darkBlue"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHg-14-s3Z" userLabel="Search Field">
                                                 <rect key="frame" x="48" y="0.0" width="274" height="40"/>
@@ -46,13 +50,17 @@
                                                     <constraint firstAttribute="width" constant="40" id="bFs-6t-3GO"/>
                                                     <constraint firstAttribute="height" constant="40" id="n7i-bb-xyy"/>
                                                 </constraints>
+                                                <color key="tintColor" name="darkBlue"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="location.circle.fill" catalog="system"/>
+                                                <state key="normal" image="location.circle.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Pf-1h-qAs">
                                         <rect key="frame" x="250" y="50" width="120" height="120"/>
+                                        <color key="tintColor" name="darkBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="3gR-7R-JHw"/>
                                             <constraint firstAttribute="width" constant="120" id="Soz-NH-zKo"/>
@@ -63,17 +71,23 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIa-nW-H5m" userLabel="Temperature Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="119.66666666666667"/>
+                                                <color key="tintColor" name="darkBlue"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="80"/>
+                                                <color key="textColor" name="darkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9G-Tx-bmb" userLabel="Degree Label">
                                                 <rect key="frame" x="92.666666666666657" y="0.0" width="38" height="119.66666666666667"/>
+                                                <color key="tintColor" name="darkBlue"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                                <color key="textColor" name="darkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-XR-gos" userLabel="Unit Label">
                                                 <rect key="frame" x="130.66666666666666" y="0.0" width="67" height="119.66666666666667"/>
+                                                <color key="tintColor" name="darkBlue"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                                <color key="textColor" name="darkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -81,6 +95,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-sJ-NLX" userLabel="City label">
                                         <rect key="frame" x="272" y="309.66666666666669" width="98" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" name="darkBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -102,6 +117,13 @@
                             <constraint firstItem="mFE-Jt-WgX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rzX-w5-0er"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="ffY-sJ-NLX" id="T0L-pW-KY8"/>
+                        <outlet property="conditionImageView" destination="6Pf-1h-qAs" id="0zR-R7-M6M"/>
+                        <outlet property="searchTextField" destination="hHg-14-s3Z" id="msH-cO-fBS"/>
+                        <outlet property="tempLabel" destination="iIa-nW-H5m" id="OMN-vb-niE"/>
+                        <outlet property="tempUnitLabel" destination="blv-XR-gos" id="Myp-jC-Ykz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,10 +131,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lightBackground" width="160" height="240"/>
+        <image name="lightBackgroundVector" width="480" height="720"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <namedColor name="darkBlue">
+            <color red="0.090196087960000004" green="0.14901961389999999" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
