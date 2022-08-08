@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/93546810/183488926-e467537a-4895-460a-9535-2a0fd869bf28.png" alt="weatherly icon" width="200"/>
+
 # Weatherly
 
 ## Description
