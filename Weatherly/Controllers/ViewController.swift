@@ -35,6 +35,7 @@ class ViewController: UIViewController {
 // MARK: TextFieldDelegate Methods
 
 extension ViewController: UITextFieldDelegate {
+    
     /// Says what to do when return button is pressed. Returns a Bool for if it should process that return.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
@@ -44,7 +45,7 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
     
-    /// Runs when a user tries to deslect the textField
+    /// Runs when a user tries to deslect the textField. Returns a Bool for if the editing actually ends
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != nil && textField.text != "" {
             textField.placeholder = "Search"
