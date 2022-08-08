@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/93546810/183488926-e467537a-4895-460a-9535-2a0fd869bf28.png" alt="weatherly icon" width="200"/>
+
 # Weatherly
 
 ## Description
@@ -5,9 +7,12 @@ Simple app that grabs phone location and displays current temperature and weathe
 
 ## Skills Practiced
 
+* UI Layout
+* Autolayout and constraints
 * Dark Mode
 * Protocol/Delegate Pattern
 * Closures/Completion Handlers
+* Use APIs
 * HTTP Requests
 * JSON Encoding/Decoding
 * Grand Central Dispatch
