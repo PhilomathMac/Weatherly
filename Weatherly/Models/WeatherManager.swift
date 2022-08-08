@@ -8,9 +8,6 @@
 import Foundation
 
 struct WeatherManager {
-    
-    var cityName = ""
-    
     let weatherURL =  "https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=\(Constants.openWeatherAPIKey)"
     
     func fetchWeatherByName(cityName: String) {
@@ -18,13 +15,13 @@ struct WeatherManager {
         performRequest(url: urlString)
     }
     
-    func fetchWeatherByLocation(lat: Double, long: Double) {
-        let latitudeString = String(lat)
-        let longitudeString = String(long)
-            
-        let urlString = "\(weatherURL)$lat=\(latitudeString)&long=\(longitudeString)"
-        
-    }
+//    func fetchWeatherByLocation(lat: Double, long: Double) {
+//        let latitudeString = String(lat)
+//        let longitudeString = String(long)
+//
+//        let urlString = "\(weatherURL)$lat=\(latitudeString)&long=\(longitudeString)"
+//
+//    }
     
     func performRequest(url: String) {
         //1. Create a URL
@@ -62,36 +59,23 @@ struct WeatherManager {
         
         //2. Attempt to decode the data
         do {
+            // 2a. Decode the data into a WeatherData type
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             
-            let condition = getConditionName(weatherID: decodedData.weather[0].id)
+            // 2b. Store needed data in constants
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
+            let name = decodedData.name
+            
+            // 2c. Create WeatherModel object
+            let weather = WeatherModel(conditionID: id, cityName: name, temp: temp)
+            print(weather.conditionName)
+            print(weather.temperatureString)
             
         } catch {
             print("error decoding JSON")
             print(error.localizedDescription)
         }
     }
-    
-    func getConditionName(weatherID: Int) -> String {
-        switch weatherID {
-        case 200...232:
-            return "cloud.bolt.fill"
-        case 300...321:
-            return "cloud.drizzle.fill"
-        case 500...531:
-            return "cloud.heavyrain.fill"
-        case 600...622:
-            return "cloud.snow.fill"
-        case 701...780:
-            return "cloud.fog.fill"
-        case 781:
-            return "tornado"
-        case 800:
-            return "sun.max.fill"
-        case 801...804:
-            return "cloud.fill"
-        default:
-            return "?"
-        }
-    }
+
 }
