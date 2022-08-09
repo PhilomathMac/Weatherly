@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -17,13 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     
     var weatherManager = WeatherManager()
+    let locationManger = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Textfield should report back to ViewController if the user interacts
         searchTextField.delegate = self
         weatherManager.delegate = self
+        locationManger.delegate = self
+        
+        locationManger.requestWhenInUseAuthorization()
+        locationManger.requestLocation()
+        
+        
         
     }
 
@@ -31,7 +38,6 @@ class ViewController: UIViewController {
 }
 
 // MARK: - TextFieldDelegate
-
 extension ViewController: UITextFieldDelegate {
     
     /// Says what to do when return button is pressed. Returns a Bool for if it should process that return.
@@ -87,6 +93,26 @@ extension ViewController: WeatherManagerDelegate {
     }
     
     func didFailWithError(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
+}
+
+// MARK: - LocationManagerDelegate
+extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let lastLocation = locations.last {
+            let lat = lastLocation.coordinate.latitude
+            let long = lastLocation.coordinate.longitude
+            print(lat)
+            print(long)
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
     
