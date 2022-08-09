@@ -73,7 +73,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uar-KW-f5b">
-                                        <rect key="frame" x="172.33333333333337" y="180" width="197.66666666666663" height="119.66666666666669"/>
+                                        <rect key="frame" x="187.33333333333337" y="180" width="182.66666666666663" height="119.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="21" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIa-nW-H5m" userLabel="Temperature Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="119.66666666666667"/>
@@ -89,8 +89,8 @@
                                                 <color key="textColor" name="darkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-XR-gos" userLabel="Unit Label">
-                                                <rect key="frame" x="130.66666666666666" y="0.0" width="67" height="119.66666666666667"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blv-XR-gos" userLabel="Unit Label">
+                                                <rect key="frame" x="130.66666666666666" y="0.0" width="52" height="119.66666666666667"/>
                                                 <color key="tintColor" name="darkBlue"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
                                                 <color key="textColor" name="darkBlue"/>
