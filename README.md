@@ -16,7 +16,27 @@ Simple app that grabs phone location and displays current temperature and weathe
 * HTTP Requests
 * JSON Encoding/Decoding
 * Grand Central Dispatch
+* Organizing Code via Extensions
+* MVC Pattern
+* Code Snippets
 * Core Location
+
+## Use Instructions
+
+This app involves using an external API. To use the app, clone the project and add your own API key.
+
+1. Create an account with [OpenWeather](https://openweathermap.org)
+2. Copy your own API key
+3. In the app project, create a Constants struct.
+4. Store your API key in a type property of the Constants struct titled OpenWeatherAPIKey.
+
+```swift
+struct Constants {
+  static let openWeatherAPIKey = "<enter your API key here>"
+}
+```
+
+Now the app should function normally.
 
 ## Attributions
 
