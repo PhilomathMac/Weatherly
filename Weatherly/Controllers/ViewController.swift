@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WeatherManagerDelegate {
+    
 
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var conditionImageView: UIImageView!
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         
         // Textfield should report back to ViewController if the user interacts
         searchTextField.delegate = self
+        weatherManager.delegate = self
         
     }
 
@@ -30,6 +32,21 @@ class ViewController: UIViewController {
         if let userText = searchTextField.text {
             print(userText)
         }
+    }
+    
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        
+        DispatchQueue.main.async {
+            self.tempLabel.text = weather.temperatureString
+            self.cityLabel.text = weather.cityName
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+        }
+        
+    }
+    
+    func didFailWithError(_ error: Error) {
+        print(error.localizedDescription)
     }
     
 }
