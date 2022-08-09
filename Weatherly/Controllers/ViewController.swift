@@ -29,9 +29,6 @@ class ViewController: UIViewController {
         
         locationManger.requestWhenInUseAuthorization()
         locationManger.requestLocation()
-        
-        
-        
     }
 
     
