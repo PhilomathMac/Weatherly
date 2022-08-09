@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, WeatherManagerDelegate {
+class ViewController: UIViewController {
     
 
     @IBOutlet var searchTextField: UITextField!
@@ -27,31 +27,10 @@ class ViewController: UIViewController, WeatherManagerDelegate {
         
     }
 
-    @IBAction func searchButtonPressed(_ sender: UIButton) {
-        searchTextField.endEditing(true)
-        if let userText = searchTextField.text {
-            print(userText)
-        }
-    }
-    
-    
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        
-        DispatchQueue.main.async {
-            self.tempLabel.text = weather.temperatureString
-            self.cityLabel.text = weather.cityName
-            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-        }
-        
-    }
-    
-    func didFailWithError(_ error: Error) {
-        print(error.localizedDescription)
-    }
     
 }
 
-// MARK: TextFieldDelegate Methods
+// MARK: - TextFieldDelegate
 
 extension ViewController: UITextFieldDelegate {
     
@@ -84,4 +63,31 @@ extension ViewController: UITextFieldDelegate {
         
         searchTextField.text = ""
     }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        searchTextField.endEditing(true)
+        if let userText = searchTextField.text {
+            print(userText)
+        }
+    }
+}
+
+
+// MARK: - WeatherManagerDelegate
+extension ViewController: WeatherManagerDelegate {
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        
+        DispatchQueue.main.async {
+            self.tempLabel.text = weather.temperatureString
+            self.cityLabel.text = weather.cityName
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+        }
+        
+    }
+    
+    func didFailWithError(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
 }
