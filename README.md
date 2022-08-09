@@ -23,6 +23,11 @@ Simple app that grabs phone location and displays current temperature and weathe
 * Code Snippets
 * Core Location
 
+## Future Features / Fixes
+* Toggle temperature units by clicking on unit label
+* Show some form of loading view to user while waiting for location data to update view
+* Alert view - show error to user when failure encountered
+
 ## Use Instructions
 
 This app involves using an external API. To use the app, clone the project and add your own API key.
