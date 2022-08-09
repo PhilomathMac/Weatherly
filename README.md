@@ -1,6 +1,8 @@
-<img src="https://user-images.githubusercontent.com/93546810/183488926-e467537a-4895-460a-9535-2a0fd869bf28.png" alt="weatherly icon" width="200"/>
-
 # Weatherly
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93546810/183757669-4a79b2a2-8b02-4907-8097-7c0b1025f426.png" alt="weatherly screenshot" width="200"/>
+</p>
 
 ## Description
 Simple app that grabs phone location and displays current temperature and weather conditions.
