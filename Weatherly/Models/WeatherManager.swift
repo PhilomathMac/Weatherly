@@ -19,11 +19,13 @@ struct WeatherManager {
     
     let weatherURL =  "https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=\(Constants.openWeatherAPIKey)"
     
+    /// Uses the cityName parameter to create a urlString and calls performRequest
     func fetchWeatherByName(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(with: urlString)
     }
     
+    /// Uses the url parameter to create a session, create a dataTask, and call parseJSON. If parseJSON returns valid data, it informs the delegate? that the WeatherModel has changed. Calls delegate's didFailWithError method if an error is encountered when getting the data.
     func performRequest(with url: String) {
         //1. Create a URL
         if let url = URL(string: url) {
@@ -54,6 +56,7 @@ struct WeatherManager {
         }
     }
     
+    /// Decodes data sent in the weatherData parameter and returns a WeatherModel object. Calls delegate method didFailWithError if encounters an error in decoding.
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
         
         //1. Create a decoder
