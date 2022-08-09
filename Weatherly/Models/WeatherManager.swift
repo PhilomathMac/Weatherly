@@ -35,7 +35,7 @@ struct WeatherManager {
     /// Uses the url parameter to create a session, create a dataTask, and call parseJSON. If parseJSON returns valid data, it informs the delegate? that the WeatherModel has changed. Calls delegate's didFailWithError method if an error is encountered when getting the data.
     func performRequest(with url: String) {
         //1. Create a URL
-        if let url = URL(string: url) {
+        if let url = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? " ") {
             
             //2. Create a URLSession
             let session = URLSession(configuration: .default)
