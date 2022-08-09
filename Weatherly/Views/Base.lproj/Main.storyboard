@@ -58,6 +58,9 @@
                                                 <state key="normal" image="location.circle.fill" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MeJ-Zu-oSm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

@@ -72,9 +72,6 @@ extension ViewController: UITextFieldDelegate {
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        if let userText = searchTextField.text {
-            print(userText)
-        }
     }
 }
 
@@ -106,14 +103,17 @@ extension ViewController: CLLocationManagerDelegate {
         if let lastLocation = locations.last {
             let lat = lastLocation.coordinate.latitude
             let long = lastLocation.coordinate.longitude
-            print(lat)
-            print(long)
+            
+            weatherManager.fetchWeatherByLocation(lat: lat, long: long)
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
+    }
+    
+    @IBAction func locationButtonPressed(_ sender: UIButton) {
+        locationManger.requestLocation()
     }
     
 }
