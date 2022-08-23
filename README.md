@@ -1,7 +1,7 @@
 # Weatherly
 
 <p align="center">
-  <img src="https://github.com/PhilomathMac/Weatherly/blob/main/PortfolioImage.png?raw=true" alt="weatherly screenshot" width="200"/>
+  <img src="https://github.com/PhilomathMac/Weatherly/blob/main/PortfolioImage.png?raw=true" alt="weatherly screenshot" width="100%"/>
 </p>
 
 ## Description
