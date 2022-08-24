@@ -43,8 +43,6 @@ struct Constants {
 }
 ```
 
-Now the app should function normally.
-
 ## Attributions
 
 This was developed using ideas from The App Brewery's Complete App Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
